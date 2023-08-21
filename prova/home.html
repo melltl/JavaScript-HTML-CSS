@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-home.css" />
+    <script src="script-home.js" defer></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="perfil">
+        <div class="mini-perfil">
+          <img
+            id="icon-principal"
+            src="imagens/marceline.png"
+            alt="Sem icon"
+            width="90px"
+          />
+          <p>Perfil da Mel</p>
+        </div>
+        <div class="mini-perfil">
+          <button id="open-modal" onclick="editaIcon()" class="btn-perfil">
+            Icons
+          </button>
+        </div>
+      </div>
+
+      <div class="ranking">
+        <h2 class="titulo-ranking">Ranking</h2>
+        <div class="mini-ranking">
+          <p id="1lugar">1 lugar: Irene(xp 500)</p>
+          <p id="2lugar">2 lugar: wandinha(xp 300)</p>
+          <p id="3lugar">3 lugar: richarlison(xp 200)</p>
+          <p id="4lugar">4 lugar: lula(xp 100)</p>
+        </div>
+      </div>
+      <div class="xp">
+        <h2>Xp acumalado:</h2>
+        <h2 id="xp-input"></h2>
+      </div>
+      <div>
+        <button id="musica" onclick="msc()">♫</button>
+        <audio
+          id="audio"
+          src="muscica/X2Download.com - Our Dream - Sovietwave Mix (128 kbps).mp3"
+          autoplay="true"
+        ></audio>
+      </div>
+    </header>
+    <main>
+      <div class="cumpridas">
+        <h3 class="titulo-cards">Missões ja cumpridas:</h3>
+
+        <ul id="listaTarefasCumpridas" class="task-box"></ul>
+      </div>
+      <div class="pendentes">
+        <h3 class="titulo-cards">Missões pendentes</h3>
+        <input
+          id="novaTarefa"
+          type="text"
+          placeholder="Adicionar nova tarefa"
+        />
+        <button class="mis-input" onclick="Enviar()">Enviar</button>
+        <button class="mis-input" onclick="btnCompletas()">Completar</button>
+        <div>
+          <ul id="listaTarefas" class="task-box"></ul>
+        </div>
+      </div>
+    </main>
+    <div>
+      <div id="fade" class="hide"></div>
+      <div id="modal" class="hide">
+        <div class="modal-header">
+          <button id="btn-fecha">X</button>
+        </div>
+        <div class="modal-body">
+          <img
+            class="modal-img"
+            id="img2"
+            src="imagens/marceline.png"
+            alt="marceline"
+          />
+          <img
+            class="modal-img"
+            id="img3"
+            src="imagens/gatoFeio.png"
+            alt="marceline"
+          />
+          <img
+            class="modal-img"
+            id="img4"
+            src="imagens/girotto.png"
+            alt="marceline"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

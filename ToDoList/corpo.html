@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="task-input">
+     
+        <input id="novaTarefa" type="text" placeholder="Adicionar nova tarefa">
+       
+      </div>
+      <div class="controls">
+        <div class="filters">
+          <span class="active" id="all">Tarefas</span>
+         
+        </div>
+        <button id="myBtn" class="clear-btn" onclick="Enviar()">Adicionar</button>
+        <button class="clear-btn" onclick="Editar()"> Editar</button>
+        <button class="clear-btn" onclick="Deletar()">Limpar</button>
+      </div>
+      <ul id="listaTarefas" class="task-box"></ul>
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

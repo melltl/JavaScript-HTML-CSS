@@ -1,0 +1,183 @@
+const openModalButton = document.querySelector("#open-modal");
+const closeModalButton = document.querySelector("#btn-fecha");
+const modal = document.querySelector("#modal");
+const fade = document.querySelector("#fade");
+var botaoAdd = document.getElementById("myBtn");
+var tarefas = document.getElementById("listaTarefas");
+var lista = [];
+var listaCompletas = [];
+
+const toggleModal = () => {
+  modal.classList.toggle("hide");
+  fade.classList.toggle("hide");
+};
+
+[openModalButton, closeModalButton, fade].forEach((el) => {
+  el.addEventListener("click", () => toggleModal());
+});
+
+function salvaMudanca() {
+  var img1 = document.getElementById("img1").addEventListener("click", salvaImg1);
+  const img2 = document.getElementById("img2").addEventListener("click", salvaImg2);
+  const img3 = document.getElementById("img3").addEventListener("click", salvaImg3);
+  const img4 = document.getElementById("img4").addEventListener("click", salvaImg4);
+  const img5 = document.getElementById("img5").addEventListener("click", salvaImg5);
+}
+function salvaImg1(){
+    const ip = document.getElementById("icon-principal");
+    var novaimg = (ip.src = "imagens/jujuba.png");
+  
+    var l=localStorage.setItem(JSON.stringify('icon-principal'),JSON.stringify("imagens/jujuba.png"));
+    alert(l)
+
+}
+function salvaImg2(){
+    const ip = document.getElementById("icon-principal");
+    var novaimg = (ip.src = "imagens/marceline.png");
+
+}
+function salvaImg3(){
+    const ip = document.getElementById("icon-principal");
+    var novaimg = (ip.src = "imagens/gatoFeio.png");
+
+}
+function salvaImg4(){
+    const ip = document.getElementById("icon-principal"); 
+    var novaimg = (ip.src = "imagens/girotto.png");
+
+
+}
+function salvaImg5(){
+  alert("Você não tem xp suficiente para isso complete suas tarefas!")
+}
+
+function Enviar() {
+  var input = document.getElementById("novaTarefa").value.toLowerCase();
+
+  for (let i = 0; i <= lista.length; i++) {
+    if (lista[i] == input) {
+      alert("Nome repetido");
+      return;
+    }
+  }
+  lista.push(input);
+  tarefas.innerHTML = lista.join("<br>");
+}
+
+function btnCompletas() {
+  var xp = document.getElementById("xp-input");
+  var lugarUm=document.getElementById("1lugar");
+  var lugardois=document.getElementById("2lugar");
+  var lugarTres=document.getElementById("3lugar");
+  var lugarSalvo
+  var listaComple = document.getElementById("listaTarefasCumpridas");
+  let pergunta = prompt("Qual tarefa você deseja completar?").toLowerCase();
+  for (let i = 0; i <= lista.length; i++) {
+    if (lista[i] == pergunta) {
+      listaCompletas.push(pergunta);
+      listaComple.innerHTML = listaCompletas.join("<br>");
+      var totalXp = listaCompletas.length * 100;
+
+      xp.innerHTML = totalXp;
+      
+        lista.splice(pergunta.indexOf (1));
+        tarefas.innerHTML = lista.join("<br>");
+        if(totalXp==200){
+          lugarSalvo= lugarTres.innerHTML=`3 lugar:Mel(xp `+totalXp+` )`
+
+        }
+        else if(totalXp==300){
+            lugardois.innerHTML=`2 lugar:Mel(`+totalXp+`)`
+            lugarTres.innerHTML=`3 lugar: wandinha(xp 300)`
+        }
+
+        else if(totalXp>=500){
+            const ip = document.getElementById("icon-principal");
+            var novaimg = (ip.src = "imagens/macaco.png");
+            lugarUm.innerHTML=`Mel(`+totalXp+`)`
+            lugardois.innerHTML=`irene(xp 500)`
+        }
+        
+      } 
+    }
+  }
+//html
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-home.css" />
+    <script src="script-home.js" defer></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="perfil">
+        <div class="mini-perfil">
+          <img id="icon-principal" src="imagens/marceline.png" alt="jujuba" width="90px" />
+          <p>Perfil da Mel</p>
+        </div>
+        <div class="mini-perfil">
+        
+          <button id="open-modal" onclick="editaIcon()" class="btn-perfil">Editar icon</button>
+        </div>
+      </div>
+
+      <div class="ranking">
+        <h2 class="titulo-ranking">Ranking</h2>
+        <div class="mini-ranking">
+          <p id="1lugar">1 lugar: Irene(xp 500)</p>
+          <p id="2lugar">2 lugar: wandinha(xp 300)</p>
+          <p id="3lugar">3 lugar: richarlison(xp 200)</p>
+        </div>
+      </div>
+      <div class="xp">
+        <h2>Xp acumalado: </h2>
+        <h2 id="xp-input"></h2>
+      </div>
+    </header>
+    <main>
+      <div class="cumpridas">
+        <h3 class="titulo-cards">Missões ja cumpridas:</h3>
+       
+        <ul id="listaTarefasCumpridas" class="task-box"></ul>
+      </div>
+      <div class="pendentes">
+        <h3 class="titulo-cards">Missões pendentes</h3>
+        <input id="novaTarefa" type="text" placeholder="Adicionar nova tarefa">
+        <button class="mis-input" onclick="Enviar()">Enviar</button>
+        <button class="mis-input" onclick="btnCompletas()">melCompletar</button>
+        <div>
+          <ul id="listaTarefas" class="task-box"></ul>
+        </div>
+      </div>
+    </main>
+    <div>
+      <h2>Escolha seu icon</h2>
+      <div id="fade" class="hide"></div>
+      <div id="modal" class="hide">
+        <div class="modal-header">
+          <button id="btn-fecha">X</button>
+          
+        </div>
+        <div class="modal-body">
+          <img class="modal-img" id="img1" src="imagens/jujuba.png" alt="jujuba">
+          <img  class="modal-img" id="img2" src="imagens/marceline.png" alt="marceline">
+          <img  class="modal-img" id="img3" src="imagens/gatoFeio.png" alt="marceline">
+          <img  class="modal-img" id="img4" src="imagens/girotto.png" alt="marceline">
+       
+        </div>
+       
+          <button onclick="salvaMudanca()" id="btn-salva">Editar</button>
+          
+        
+      </div>
+
+    </div>
+  </body>
+</html>
+
+
+

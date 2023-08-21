@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Teko&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #2a233b;
+  color: whitesmoke;
+  font-family: "Teko", sans-serif;
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns:1fr 1fr 1fr; */
+  grid-gap: 10px;
+  background: #514869;
+  margin: 20px;
+  border-radius: 30px;
+}
+.perfil {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.mini-perfil {
+  margin-left: 20px;
+}
+
+.btn-perfil {
+  width: 100px;
+  border: none;
+  font-size: 20px;
+  border-radius: 50px;
+  height: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #00ff88;
+  font-family: "Teko", sans-serif;
+  margin-bottom: 30px;
+}
+
+.btn-perfil:hover {
+  color: #00ff88;
+  width: 100px;
+
+  background-color: #1a0d2c;
+}
+
+.ranking {
+  display: grid;
+  justify-content: center;
+}
+
+.titulo-ranking {
+  color: #00ff88;
+}
+
+.mini-ranking {
+  justify-self: center;
+  font-size: 20px;
+  margin-top: -20px;
+}
+
+.xp {
+  color: #00ff88;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  font-size: 20px;
+}
+
+.cumpridas {
+  border-radius: 10px;
+  background: #514869;
+  justify-self: center;
+  padding: 50px;
+  box-shadow: 9px 9px #675a85;
+  outline: none;
+  width: 25vw;
+}
+
+.pendentes {
+  border-radius: 10px;
+  background: #514869;
+  justify-self: center;
+  justify-content: center;
+  padding: 50px;
+  box-shadow: 9px 9px #675a85;
+  outline: none;
+  width: 25vw;
+}
+
+.titulo-cards {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.novaTarefa{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+#novaTarefa{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.mis-input {
+  width: auto;
+  margin: 10px;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 20px;
+}
+
+/* .mis-input>label{
+    padding: 10px;
+} */
+
+.mis-input {
+  outline: none;
+  border: none;
+  box-shadow: 2px 3px#020c07;
+  border-radius: 70px;
+  height: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #00ff88;
+  box-shadow: 10px #38c080;
+  width: 5vw;
+  font-size: 10px;
+}
+.mis-input > button:hover {
+}
+#musica {
+  border-radius: 50%;
+  border: none;
+  background-color: #00ff88;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!MODAL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#btn-fecha{
+  
+    background-color: #2a233b;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: 0.4s;
+    cursor: pointer;
+    color: #00ff88;
+    font-size: 16px;
+   
+    
+}
+#btn-salva{
+    background-color: #00ff88;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 30px;
+    align-items: center;
+    opacity: 0.8;
+    transition: 0.4s;
+
+}
+#btn-fecha:hover, #btn-salva:hover{
+    opacity: 1.5;
+
+   
+}
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.6);
+
+}
+#modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: #2a233b;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+.modal-body img{
+    margin: 4px;
+}
+.modal-img{
+    width: 100px;
+    cursor: pointer;
+    border: transparent 2px solid;
+}
+#modal.hide,#fade.hide{
+   display: none;
+}
+
+.borda-img {
+    border: #00ff88 2px solid;
+    border-radius: 50%;
+}
